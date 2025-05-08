@@ -1001,49 +1001,57 @@
       var player = document.getElementById("intro");
       var wrapper = document.querySelector('.wrapper');
 
-      var desktopAnim = './img/anim/intro.json';
-      var mobileAnim = './img/anim/intro-mobile.json';
+      // var desktopAnim = './img/anim/intro.json';
+      // var mobileAnim = './img/anim/intro-mobile.json';
 
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
-        player.load(mobileAnim);
-      } else {
-        player.load(desktopAnim);
-      }
+      // if (/Mobi|Android/i.test(navigator.userAgent)) {
+      //   player.load(mobileAnim);
+      // } else {
+      //   player.load(desktopAnim);
+      // }
 
-      player.addEventListener('ready', function () {
+      // player.addEventListener('ready', function () {
 
-        if (visited === 'yes') {
-          body[0].classList.remove('animateBody');
-          wrapper.classList.remove('hideBody');
+      //   if (visited === 'yes') {
+      //     body[0].classList.remove('animateBody');
+      //     wrapper.classList.remove('hideBody');
 
-          loader.style.display = 'none';
+      //     loader.style.display = 'none';
 
-        } else {
-          body[0].classList.add('animateBody');
+      //   } else {
+      //     body[0].classList.add('animateBody');
 
-          loader.style.display = 'block';
-          container.classList.remove('hidden');
+      //     loader.style.display = 'block';
+      //     container.classList.remove('hidden');
 
-          setTimeout(() => {
-            player.classList.remove('invisible');
-            loading.style.display = 'none';
-            player.play();
-          }, 500);
+      //     setTimeout(() => {
+      //       player.classList.remove('invisible');
+      //       loading.style.display = 'none';
+      //       player.play();
+      //     }, 500);
 
-          sessionStorage.setItem('visited', 'yes');
+      //     sessionStorage.setItem('visited', 'yes');
 
-          player.addEventListener('complete', function () {
-            wrapper.classList.remove('hideBody');
-            loader.classList.add('fadeOut');
+      //     player.addEventListener('complete', function () {
+      //       wrapper.classList.remove('hideBody');
+      //       loader.classList.add('fadeOut');
 
-            setTimeout(() => {
-              body[0].classList.remove('animateBody');
-              loader.style.display = 'none';
-            }, 1000);
-          });
-        }
-      })
+      //       setTimeout(() => {
+      //         body[0].classList.remove('animateBody');
+      //         loader.style.display = 'none';
+      //       }, 1000);
+      //     });
+      //   }
+      // })
+    
+    body[0].classList.remove('animateBody');
+    wrapper.classList.remove('hideBody');
+    loader.style.display = 'none';
+    
+    sessionStorage.setItem('visited', 'yes');
     })();
+
+
   </script>
 </body>
 
