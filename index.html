@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
   <link rel="stylesheet" href="css/flipster.min.css">
+  <link rel="preload" as="image" href="img/ball.webp" type="image/webp" fetchpriority="high">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -1000,49 +1001,6 @@
       var loader = document.getElementById('loader');
       var player = document.getElementById("intro");
       var wrapper = document.querySelector('.wrapper');
-
-      // var desktopAnim = './img/anim/intro.json';
-      // var mobileAnim = './img/anim/intro-mobile.json';
-
-      // if (/Mobi|Android/i.test(navigator.userAgent)) {
-      //   player.load(mobileAnim);
-      // } else {
-      //   player.load(desktopAnim);
-      // }
-
-      // player.addEventListener('ready', function () {
-
-      //   if (visited === 'yes') {
-      //     body[0].classList.remove('animateBody');
-      //     wrapper.classList.remove('hideBody');
-
-      //     loader.style.display = 'none';
-
-      //   } else {
-      //     body[0].classList.add('animateBody');
-
-      //     loader.style.display = 'block';
-      //     container.classList.remove('hidden');
-
-      //     setTimeout(() => {
-      //       player.classList.remove('invisible');
-      //       loading.style.display = 'none';
-      //       player.play();
-      //     }, 500);
-
-      //     sessionStorage.setItem('visited', 'yes');
-
-      //     player.addEventListener('complete', function () {
-      //       wrapper.classList.remove('hideBody');
-      //       loader.classList.add('fadeOut');
-
-      //       setTimeout(() => {
-      //         body[0].classList.remove('animateBody');
-      //         loader.style.display = 'none';
-      //       }, 1000);
-      //     });
-      //   }
-      // })
     
     body[0].classList.remove('animateBody');
     wrapper.classList.remove('hideBody');
