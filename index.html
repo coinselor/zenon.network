@@ -7,8 +7,10 @@
   <title>Zenon &mdash; Network of Momentum</title>
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="css/flipster.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/flipster.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/flipster.min.css"></noscript>
   <link rel="preload" as="image" href="img/ball.webp" type="image/webp" fetchpriority="high">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -938,55 +940,55 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
-  <script src="js/flipster.min.js"></script>
-  <script>
-    $('.times__label').hide();
+  <script defer src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
+  <script defer src="js/flipster.min.js"></script>
+  <script defer>
+    window.addEventListener('load', () => {
+      $('.times__label').hide();
 
-    setTimeout(() => {
-      $('.flipster__item--current').find('.times__label').show();
-    });
-    
-    $('.my-flipster').flipster({
-      style: 'flat',
-      buttons: 'custom',
-      buttonPrev: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37 4L5 39.5L37 75" stroke="url(#paint0_linear_1411_12)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_12" x1="-24.7931" y1="39.5" x2="50.7931" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
-      buttonNext: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99999 75L36 39.5L3.99999 4" stroke="url(#paint0_linear_1411_2199)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_2199" x1="65.7931" y1="39.5" x2="-9.79311" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
-      scrollwheel: false,
-      spacing: -0.4,
-      click: true,
-      touch: true,
-      onItemSwitch: (current, previous) => {
-        const title = $(current).data('flip-title');
+      setTimeout(() => {
+        $('.flipster__item--current').find('.times__label').show();
+      });
+      
+      $('.my-flipster').flipster({
+        style: 'flat',
+        buttons: 'custom',
+        buttonPrev: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37 4L5 39.5L37 75" stroke="url(#paint0_linear_1411_12)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_12" x1="-24.7931" y1="39.5" x2="50.7931" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
+        buttonNext: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99999 75L36 39.5L3.99999 4" stroke="url(#paint0_linear_1411_2199)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_2199" x1="65.7931" y1="39.5" x2="-9.79311" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
+        scrollwheel: false,
+        spacing: -0.4,
+        click: true,
+        touch: true,
+        onItemSwitch: (current, previous) => {
+          const title = $(current).data('flip-title');
 
-        if (title) {
-          $(`.flipster__button--${title}`).hide();
-        } else {
-          $('.flipster__button--prev').show();
-          $('.flipster__button--next').show();
+          if (title) {
+            $(`.flipster__button--${title}`).hide();
+          } else {
+            $('.flipster__button--prev').show();
+            $('.flipster__button--next').show();
+          }
+
+          setTimeout(() => {
+            $('.times__label').hide();
+            $('.flipster__item--current').find('.times__label').show();
+          })
         }
+      });
 
-        setTimeout(() => {
-          $('.times__label').hide();
-          $('.flipster__item--current').find('.times__label').show();
-        })
-      }
+      $('.tab-flipster').flipster({
+        style: 'carousel',
+        buttons: 'custom',
+        buttonPrev: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37 4L5 39.5L37 75" stroke="url(#paint0_linear_1411_12)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_12" x1="-24.7931" y1="39.5" x2="50.7931" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
+        buttonNext: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99999 75L36 39.5L3.99999 4" stroke="url(#paint0_linear_1411_2199)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_2199" x1="65.7931" y1="39.5" x2="-9.79311" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
+        scrollwheel: false,
+        nav: true,
+        spacing: -0.7,
+        touch: true
+      });
     });
-
-    $('.tab-flipster').flipster({
-      style: 'carousel',
-      buttons: 'custom',
-      buttonPrev: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37 4L5 39.5L37 75" stroke="url(#paint0_linear_1411_12)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_12" x1="-24.7931" y1="39.5" x2="50.7931" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
-      buttonNext: '<svg width="41" height="79" viewBox="0 0 41 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99999 75L36 39.5L3.99999 4" stroke="url(#paint0_linear_1411_2199)" stroke-width="7" stroke-linecap="round"/><defs><linearGradient id="paint0_linear_1411_2199" x1="65.7931" y1="39.5" x2="-9.79311" y2="39.5" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs></svg>',
-      scrollwheel: false,
-      nav: true,
-      spacing: -0.7,
-      touch: true
-    });
-
-
   </script>
 </body>
 
