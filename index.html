@@ -7,8 +7,10 @@
   <title>Zenon &mdash; Network of Momentum</title>
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="css/flipster.min.css">
+  <link rel="preload" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"></noscript>
+  <link rel="preload" href="css/flipster.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/flipster.min.css"></noscript>
   <link rel="preload" as="image" href="img/ball.webp" type="image/webp" fetchpriority="high">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -938,10 +940,10 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
-  <script src="js/flipster.min.js"></script>
+  <script defer src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
+  <script defer src="js/flipster.min.js"></script>
   <script>
     $('.times__label').hide();
 
