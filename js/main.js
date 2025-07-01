@@ -82,7 +82,8 @@
     var overlay = document.querySelectorAll('.modal');
     if (overlay) {
         for (var o = 0; o < overlay.length; o++) {
-            overlay[o].addEventListener('click', function () {
+            overlay[o].addEventListener('click', function (e) {
+            if (e.target !== this) return;
                 var _this = this;
                 setTimeout(function () {
                     _this.style.visibility = 'hidden';
