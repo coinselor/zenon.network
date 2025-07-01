@@ -1618,7 +1618,7 @@ main {
 #bigTitle {
   margin-top: 11rem;
   margin-bottom: 5rem;
-  background-image: url("../img/ball.png");
+  background-image: url("../img/ball.webp");
   background-size: contain;
   background-position: 30rem 0;
   background-repeat: no-repeat;
