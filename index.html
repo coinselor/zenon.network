@@ -6,7 +6,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zenon &mdash; Network of Momentum</title>
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- 1. Inlined Critical CSS -->
+  <style>
+    @font-face{font-family:"Circular Std";font-style:normal;font-weight:450;src:url("../fonts/Circular Std Book.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:"Circular Std";font-style:normal;font-weight:500;src:url("../fonts/Circular Std Medium.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:"Circular Std";font-style:normal;font-weight:900;src:url("../fonts/Circular Std Black.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:"Florencesans SC Exp";font-style:normal;font-weight:400;src:url("../fonts/FlorencesansSC-Regular.woff") format("woff");font-display:swap}
+    html{font-size:55%;background:#0E0E0E}
+    @media screen and (min-width:1600px){html{font-size:62.5%}}
+    body{background:#0E0E0E;font-family:"Circular Std",Helvetica,Arial,sans-serif;color:white;font-size:1.6rem;line-height:1.2}
+    p,h1,h2,h3{margin:0}
+    button{background:none;cursor:pointer;outline:0}
+    ul{margin:0}
+    .container{width:100%;padding-right:1.2rem;padding-left:1.2rem;margin-right:auto;margin-left:auto}
+    @media screen and (min-width:576px){.container{max-width:90%}}
+    @media screen and (min-width:1200px){.container{max-width:1000px}}
+    @media screen and (min-width:1400px){.container{max-width:1200px}}
+    @media screen and (min-width:1600px){.container{max-width:1400px}}
+    header{width:100%;position:fixed;z-index:9999;transition:top .3s linear}
+    header.fixed{top:0;background:transparent}
+    .section{margin-bottom:4rem}
+    .section__container{width:100%;margin-right:auto;margin-left:auto;display:flex;justify-content:space-between;align-items:center;flex-direction:column}
+    .section__container--column{flex-direction:column}
+    .navbar{display:flex;justify-content:space-between;padding-top:2rem;padding-bottom:2rem;flex-direction:column;align-items:center;gap:1.5rem}
+    .navbar__buttons{display:flex;gap:2rem;padding:0}
+    .navbar__buttons a{width:10rem;padding:.8rem 0;line-height:1;align-self:center;justify-content:center;font-size:1.5rem}
+    .navbar__logo{display:flex;flex-direction:column;height:auto;align-items:center}
+    .navbar__logo img{max-width:3rem}
+    .navbar__top{display:flex;justify-content:space-between;align-items:center;gap:5rem}
+    .navbar__menu{display:flex;align-items:center;list-style:none;padding-left:0;justify-content:space-evenly;gap:2rem;flex:1 1 auto}
+    .navbar__menu a{font-size:1.8rem;line-height:2.4rem;color:white;text-decoration:none;text-transform:uppercase}
+    .navbar__social{display:flex;padding-left:0;list-style:none;align-items:center;justify-content:flex-end;gap:2rem}
+    .navbar__social a{font-size:2.5rem;color:#303030}
+    .burger-menu{display:block;padding:.6rem 1.2rem;font-size:2rem;height:100%;cursor:pointer}
+    @media screen and (min-width:768px){.burger-menu{display:none}}
+    @media screen and (max-width:768px){.navbar__top{width:100%;gap:2rem} .navbar__menu{flex-direction:column;gap:0;position:relative;background:#1B1B1B;width:100%;top:0;border-radius:1rem;max-height:0;overflow:hidden;transition:max-height .3s ease-in-out} .navbar__menu li{width:100%} .navbar__menu li a{width:100%;text-align:center;display:block;padding:1rem} .navbar__menu.opened{max-height:40rem}}
+    @media screen and (min-width:1200px){.navbar{flex-direction:row;flex-wrap:wrap;padding-top:3rem;padding-bottom:3rem}}
+    .btn{display:inline-flex;align-items:center;font:500 1.5rem "Circular Std",Helvetica,Arial,sans-serif;line-height:1.9rem;padding:1.2rem 3.5rem;border:.15rem solid white;border-radius:.4rem;color:white;text-decoration:none;position:relative}
+    .btn--primary{border-color:#3BDA57}
+    .btn--ternary{border-color:#446AEF}
+    .gradient-btn{display:inline-block;border-radius:.9rem;font:500 1.5rem "Circular Std",Helvetica,Arial,sans-serif;padding:1.4rem 2rem;color:white;text-decoration:none;position:relative;border:solid 3px transparent;background-image:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)),linear-gradient(101deg,#6BFF85,#1471DD,#980C71);background-origin:border-box;background-clip:content-box,border-box;box-shadow:2px 1000px 1px #0e0e0e inset}
+    @media screen and (min-width:768px){.btn{font:500 2rem "Circular Std",Helvetica,Arial,sans-serif;padding:2rem 5rem} .gradient-btn{font:500 2rem "Circular Std",Helvetica,Arial,sans-serif;padding:2rem 5rem}}
+    #bigTitle{margin-top:11rem;margin-bottom:5rem;background-image:url(img/ball.png);background-size:contain;background-position:30rem 0;background-repeat:no-repeat;padding:5rem 0}
+    #bigTitle .darken{width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.4)}
+    .bigTitle .section__container{align-items:flex-start;gap:4rem}
+    .bigTitle__text h2{font-weight:900;font-size:5rem;line-height:1;margin-bottom:1.4rem;max-width:35rem;background-color:white;background-image:linear-gradient(45deg,white,#9A9A9A);background-size:100%;background-repeat:repeat;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .bigTitle__text p{font-size:1.6rem;font-weight:400;color:#C7C7C7;margin-bottom:5rem;max-width:28rem}
+    .bigTitle__buttons{display:flex;align-items:center;gap:2rem;margin-bottom:6rem}
+    .bigTitle__button{display:flex;align-items:center;gap:1.4rem;text-decoration:none;color:white;font-size:1.5rem;font-weight:500;border:none}
+    .bigTitle__button i{display:flex;align-items:center;justify-content:center;font-size:1rem;width:2.7rem;height:2.7rem;border-radius:50%;background:linear-gradient(210deg,#6BFF85,#1471DD,#980C71);color:#151515}
+    .bigTitle__brands{display:flex;align-items:center;width:100%;gap:2rem;flex-wrap:wrap}
+    .bigTitle__brands .brand{width:100%;height:5rem;display:inline-block;position:relative;background-position:center center;background-size:contain;background-repeat:no-repeat}
+    @media screen and (min-width:576px){#bigTitle{margin-bottom:0;background-position:95% 20%;background-size:50%}}
+    @media screen and (min-width:768px){#bigTitle{padding:10rem 0;background-size:45%} .bigTitle__text h2{font-size:7rem;max-width:48rem;line-height:1;margin-bottom:2rem} .bigTitle__text p{font-size:2rem;margin-bottom:3rem;max-width:58rem} .bigTitle__button{font-size:2.5rem} .bigTitle__button i{font-size:1.5rem;width:4.8rem;height:4.8rem} .bigTitle__buttons{gap:4rem}}
+    @media screen and (min-width:992px){#bigTitle{background-size:40%} #bigTitle .darken{display:none}}
+    @media screen and (min-width:1200px){#bigTitle{background-size:35%;background-position:90% 0}}
+  </style>
+
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
   <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"></noscript>
   <link rel="stylesheet" href="css/flipster.min.css" media="print" onload="this.media='all'">
