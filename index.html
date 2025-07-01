@@ -25,7 +25,7 @@
     @media screen and (min-width:1400px){.container{max-width:1200px}}
     @media screen and (min-width:1600px){.container{max-width:1400px}}
     header{width:100%;position:fixed;z-index:9999;transition:top .3s linear}
-    header.fixed{top:0;background:transparent}
+    header.fixed{top:0;background:transparent}.modal{display:none}.modal.show{display:block}
     .section{margin-bottom:4rem}
     .section__container{width:100%;margin-right:auto;margin-left:auto;display:flex;justify-content:space-between;align-items:center;flex-direction:column}
     .section__container--column{flex-direction:column}
@@ -69,6 +69,7 @@
   <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"></noscript>
   <link rel="stylesheet" href="css/flipster.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css">
   <noscript><link rel="stylesheet" href="css/flipster.min.css"></noscript>
   <link rel="preload" href="fonts/Circular Std Book.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="fonts/Circular Std Medium.ttf" as="font" type="font/ttf" crossorigin>
@@ -154,7 +155,7 @@
                       </button>
                   </div>
                   <div class="modal__body">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/UqAequz4mgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <lite-youtube videoid="UqAequz4mgk" playlabel="Play video: Network of Momentum overview" style="width:100%;height:315px;"></lite-youtube>
                   </div>
                   <div class="modal__footer"></div>
               </div>
@@ -517,12 +518,12 @@
                 </div>
               </div>
               <div class="join-content__right">
-                <img src="./img/network.png" alt="network" width="410" />
+                <img src="./img/network.webp" alt="network" width="410" />
               </div>
             </div>
             <div class="join-content">
               <div class="join-content__left">
-                <img src="./img/funding.png" alt="funding" width="550" />
+                <img src="./img/funding.webp" alt="funding" width="550" />
               </div>
               <div class="join-content__right join-content--full  join-content__right--reverse">
                 <h3 class="join-content__title">Get funding</h3>
@@ -727,7 +728,7 @@
                     </div>
                     <h3>Create your wallet</h3>
                     <p class="mb-0">Syrius is a state-of-the-art non-custodial wallet for the Network of Momentum. Store and manage your ZNN, QSR and ZTS tokens in a cross-platform, user-friendly and safe digital wallet</p>
-                    <img src="./img/wallet-bg.png" alt="wallet bg" />
+                    <img src="./img/wallet-bg.webp" alt="wallet bg" />
                   </div>
                   <a href="#downloads">Download Syrius wallet <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -791,7 +792,7 @@
                     </div>
                     <h3>Explore Code</h3>
                     <p class="mb-0">The vision, distilled. Explore the code powering the Network of Momentum. Every contribution matters</p>
-                    <img src="./img/code-bg.png" alt="code bg" />
+                    <img src="./img/code-bg.webp" alt="code bg" />
                   </div>
                   <a target="_blank" href="https://github.com/zenon-network">Discover Github <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -889,31 +890,31 @@
                 <div class="tab-flipster">
                   <ul>
                     <li data-flip-title="Syrius extension">
-                      <img src="./img/z.extension.png" alt="page 1" />
+                      <img src="./img/z.extension.webp" alt="page 1" />
                     </li>
                     <li data-flip-title="Syrius Mobile">
-                      <img src="./img/z.mobile_app.png"  alt="page 2" />
+                      <img src="./img/z.mobile_app.webp"  alt="page 2" />
                     </li>
                     <li data-flip-title="Bridge">
-                      <img src="./img/z.bridge.png"  alt="page 3" />
+                      <img src="./img/z.bridge.webp"  alt="page 3" />
                     </li>
                     <li data-flip-title="zenon.org">
-                      <img src="./img/z.org.png"  alt="page 4" />
+                      <img src="./img/z.org.webp"  alt="page 4" />
                     </li>
                     <li data-flip-title="zenon.tools">
-                      <img src="./img/z.tools.png"  alt="page 5" />
+                      <img src="./img/z.tools.webp"  alt="page 5" />
                     </li>
                     <li data-flip-title="Zenon Forum">
-                      <img src="./img/z.forum.png"  alt="page 6" />
+                      <img src="./img/z.forum.webp"  alt="page 6" />
                     </li>
                     <li data-flip-title="Zenon.info">
-                      <img src="./img/z.info.png"  alt="page 7" />
+                      <img src="./img/z.info.webp"  alt="page 7" />
                     </li>
                     <li data-flip-title="Zenonhub.io">
-                      <img src="./img/z.hub.png"  alt="page 8" />
+                      <img src="./img/z.hub.webp"  alt="page 8" />
                     </li>
                     <li data-flip-title="Zenon Playground">
-                      <img src="./img/z.playground.png"  alt="page 9" />
+                      <img src="./img/z.playground.webp"  alt="page 9" />
                     </li>
                   </ul>
                 </div>
@@ -1006,6 +1007,7 @@
     </div>
   </div>
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.js"></script>
   <script defer src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
   <script defer src="./js/main.js"></script>
   <script defer src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
