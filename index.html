@@ -24,15 +24,8 @@
   <!--Zenon Network is an independent entity-->
 </head>
 
-<body class="animateBody">
-  <div id="loader" class="custom-container fadeIn">
-    <div id="loading" class="lds-dual-ring"></div>
-    <div id="container" class="container hidden">
-      <lottie-player id="intro" class="invisible" renderer="svg" preserveAspectRatio="xMidYMid slice" mode="normal" speed="1.0"></lottie-player>
-    </div>
-  </div>
-
-  <div class="wrapper hideBody">
+<body>
+  <div class="wrapper">
 
     <header id="header">
       <nav>
@@ -992,22 +985,6 @@
       spacing: -0.7,
       touch: true
     });
-
-    (function () {
-      var visited = sessionStorage.getItem('visited');
-      var body = document.getElementsByTagName('body');
-      var loading = document.getElementById('loading');
-      var container = document.getElementById('container');
-      var loader = document.getElementById('loader');
-      var player = document.getElementById("intro");
-      var wrapper = document.querySelector('.wrapper');
-    
-    body[0].classList.remove('animateBody');
-    wrapper.classList.remove('hideBody');
-    loader.style.display = 'none';
-    
-    sessionStorage.setItem('visited', 'yes');
-    })();
 
 
   </script>
